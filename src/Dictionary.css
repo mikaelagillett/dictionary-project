@@ -1,0 +1,19 @@
+.dictionary {
+  font-family: "Inter", sans-serif;
+}
+
+.searchBar {
+  border: none;
+  background: none;
+  font-size: 48px;
+  width: 60vw;
+  font-weight: 600;
+}
+.submitButton {
+  border: none;
+  background: none;
+}
+.search-icon {
+  font-size: 38px;
+  color: #5a5a5a;
+}
