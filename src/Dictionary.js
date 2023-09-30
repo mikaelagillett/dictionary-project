@@ -6,19 +6,26 @@ import GetPage from "./GetPage";
 function Dictionary() {
   const [search, setSearch] = useState("");
   const [wordData, setWordData] = useState({ ready: false });
+  const [imageData, setImageData] = useState();
   const [page, setPage] = useState("Overview");
   function searching(response) {
     setSearch(response.target.value);
   }
   function submitSearch(event) {
     event.preventDefault();
-    let apiKey = "5332bf2a40c7e9tc684f12abo0f0ab54";
-    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${search}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+    let dictionaryApiKey = "5332bf2a40c7e9tc684f12abo0f0ab54";
+    let dictionaryApiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${search}&key=${dictionaryApiKey}`;
+    axios.get(dictionaryApiUrl).then(handleResponse);
+    let imagesApiKey = "5332bf2a40c7e9tc684f12abo0f0ab54";
+    let imagesApiUrl = `https://api.shecodes.io/images/v1/search?query=${search}&key=${imagesApiKey}`;
+    axios.get(imagesApiUrl).then(getImages);
     setPage("Overview");
   }
   function handleResponse(response) {
     setWordData({ ready: true, data: response.data });
+  }
+  function getImages(response) {
+    setImageData(response.data.photos);
   }
   function changePage(event) {
     event.preventDefault();
@@ -99,7 +106,7 @@ function Dictionary() {
           </div>
         </nav>
         <div className=" box ms-4">
-          <GetPage page={page} response={wordData} />
+          <GetPage page={page} response={wordData} photos={imageData} />
         </div>
       </div>
     </div>

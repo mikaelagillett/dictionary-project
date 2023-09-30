@@ -2,6 +2,7 @@ import Overview from "./Overview";
 import Noun from "./Noun";
 import Verb from "./Verb";
 import Adjective from "./Adjective";
+import Photos from "./Photos";
 
 import "./GetPage.css";
 
@@ -21,7 +22,7 @@ function GetPage(props) {
     } else if (props.page === "Adjective") {
       return <Adjective data={props.response.data} />;
     } else if (props.page === "Photos") {
-      return "display photos";
+      return <Photos data={props.photos} />;
     } else {
       return null;
     }
