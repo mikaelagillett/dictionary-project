@@ -1,0 +1,15 @@
+.nav-item a {
+  writing-mode: vertical-rl !important;
+  transform: rotateZ(-180deg);
+  font-size: 15px;
+  font-weight: 500;
+  border-left: solid 1px;
+  padding-left: 12px;
+  padding-top: 24px;
+}
+
+.box {
+  width: 100%;
+  min-height: 400px;
+  background-color: white;
+}

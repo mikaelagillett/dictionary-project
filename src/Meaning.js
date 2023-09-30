@@ -1,6 +1,7 @@
 import Synonyms from "./Synonyms";
 
 function Meaning(props) {
+  console.log(props.meaning);
   return (
     <div>
       <h4>{props.meaning.partOfSpeech}</h4>
