@@ -5,11 +5,11 @@ function Noun(props) {
     if (meaning.partOfSpeech.includes("noun")) {
       return (
         <div key={index}>
-          <Meaning meaning={meaning} />
+          <Meaning meaning={meaning} index={index} />
         </div>
       );
     } else {
-      return "this word is not a noun";
+      return null;
     }
   });
 }

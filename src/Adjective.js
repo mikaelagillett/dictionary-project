@@ -5,11 +5,11 @@ function Adjective(props) {
     if (meaning.partOfSpeech.includes("adjective")) {
       return (
         <div key={index}>
-          <Meaning meaning={props.meaning} />
+          <Meaning meaning={meaning} index={index} />
         </div>
       );
     } else {
-      return "this word is not an adjective";
+      return null;
     }
   });
 }

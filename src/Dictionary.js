@@ -15,6 +15,7 @@ function Dictionary() {
     let apiKey = "5332bf2a40c7e9tc684f12abo0f0ab54";
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${search}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
+    setPage("Overview");
   }
   function handleResponse(response) {
     setWordData({ ready: true, data: response.data });
@@ -44,8 +45,7 @@ function Dictionary() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a
-                    className="nav-link active"
-                    aria-current="page"
+                    className="nav-link"
                     onClick={changePage}
                     aria-label="Overview"
                   >

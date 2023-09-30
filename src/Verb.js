@@ -5,11 +5,11 @@ function Verb(props) {
     if (meaning.partOfSpeech.includes("verb")) {
       return (
         <div key={index}>
-          <Meaning meaning={props.meaning} />
+          <Meaning meaning={meaning} index={index} />
         </div>
       );
     } else {
-      return "this word is not a verb";
+      return null;
     }
   });
 }
