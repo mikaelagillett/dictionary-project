@@ -1,9 +1,11 @@
 import "./Dictionary.css";
 import { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 
 function Dictionary() {
   const [search, setSearch] = useState("");
+  const [wordData, setWordData] = useState({});
   function searching(response) {
     setSearch(response.target.value);
   }
@@ -14,8 +16,9 @@ function Dictionary() {
     axios.get(apiUrl).then(handleResponse);
   }
   function handleResponse(response) {
-    console.log(response);
+    setWordData(response.data);
   }
+
   return (
     <div className="dictionary">
       <form onSubmit={submitSearch}>
@@ -30,6 +33,7 @@ function Dictionary() {
           <i className="fa-solid fa-magnifying-glass search-icon"></i>{" "}
         </button>
       </form>
+      <Results wordData={wordData} />
     </div>
   );
 }
