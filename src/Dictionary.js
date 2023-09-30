@@ -21,6 +21,7 @@ function Dictionary() {
     setWordData({ ready: true, data: response.data });
   }
   function changePage(event) {
+    event.preventDefault();
     setPage(event.target.ariaLabel);
   }
 
@@ -48,6 +49,7 @@ function Dictionary() {
                     className="nav-link"
                     onClick={changePage}
                     aria-label="Overview"
+                    href="/"
                   >
                     OVERVIEW
                   </a>
@@ -57,6 +59,7 @@ function Dictionary() {
                     className="nav-link"
                     onClick={changePage}
                     aria-label="Noun"
+                    href="/"
                   >
                     NOUN
                   </a>
@@ -66,6 +69,7 @@ function Dictionary() {
                     className="nav-link"
                     onClick={changePage}
                     aria-label="Verb"
+                    href="/"
                   >
                     VERB
                   </a>
@@ -75,6 +79,7 @@ function Dictionary() {
                     className="nav-link"
                     onClick={changePage}
                     aria-label="Adjective"
+                    href="/"
                   >
                     ADJECTIVE
                   </a>
@@ -84,6 +89,7 @@ function Dictionary() {
                     className="nav-link pt-1"
                     onClick={changePage}
                     aria-label="Photos"
+                    href="/"
                   >
                     PHOTOS
                   </a>
