@@ -5,7 +5,7 @@ import Results from "./Results";
 
 function Dictionary() {
   const [search, setSearch] = useState("");
-  const [wordData, setWordData] = useState({});
+  const [wordData, setWordData] = useState({ ready: false });
   function searching(response) {
     setSearch(response.target.value);
   }
@@ -16,7 +16,7 @@ function Dictionary() {
     axios.get(apiUrl).then(handleResponse);
   }
   function handleResponse(response) {
-    setWordData(response.data);
+    setWordData({ ready: true, data: response.data });
   }
 
   return (
