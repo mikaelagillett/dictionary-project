@@ -11,6 +11,13 @@ function App() {
           <img src={logo} alt="dictionarylogo" />
         </header>
         <Dictionary />
+        <footer className="position-fixed bottom-0 end-0 footer">
+          coded by mikaela gillett
+          <br />
+          <a href="https://github.com/mikaelagillett/dictionary-project">
+            open-source coded
+          </a>
+        </footer>
       </div>
     </div>
   );
